@@ -1,0 +1,12 @@
+nginx:
+  image: nginx_s3_streaming_zip
+  ports:
+    - "8888:80"
+  environment:
+    - "AWS_ACCESS_KEY_ID="
+    - "AWS_SECRET_ACCESS_KEY="
+    - "AWS_DEFAULT_REGION="
+    - "AWS_BUCKET="
+  volumes:
+    - "./example:/var/www/html/example:ro"
+  mem_limit: 128m
