@@ -9,7 +9,7 @@ MAINTAINER Ira W. Snyder <isnyder@lcogt.net>
 
 EXPOSE 80
 
-ENV NGINX_VERSION=1.9.5
+ENV NGINX_VERSION=1.13.0
 
 # install system packages
 RUN yum -y install epel-release \
