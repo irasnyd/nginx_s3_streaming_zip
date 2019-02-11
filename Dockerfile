@@ -9,7 +9,7 @@ MAINTAINER Ira W. Snyder <isnyder@lcogt.net>
 
 EXPOSE 80
 
-ENV NGINX_VERSION=1.13.0
+ENV NGINX_VERSION=1.15.8
 
 # install system packages
 RUN yum -y install epel-release \
@@ -22,7 +22,7 @@ RUN yum -y install epel-release \
 RUN curl -LO http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz \
         && tar zxf nginx-${NGINX_VERSION}.tar.gz \
         && cd nginx-${NGINX_VERSION} \
-        && git clone https://github.com/anomalizer/ngx_aws_auth.git \
+        && git clone --single-branch --branch AuthV2 https://github.com/anomalizer/ngx_aws_auth.git \
         && git clone https://github.com/evanmiller/mod_zip.git \
         && ./configure \
             --prefix=/usr \
